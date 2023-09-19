@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Cambria;
+    box-sizing: border-box;
+    color: #444;
+}
+
+a{
+    text-decoration: none;
+    color: #444;
+    transition: 0.4s;
+}
+
+a:hover {
+    color: #dec229;
+    font-weight: bold;
+}
+
+div{
+   background-color: #f2f3f5; 
+}
+
+.title-1{
+    margin: 1rem auto;
+    font-size: 2rem;
+    color: gray;
+    // font-family: 'Nabla', cursive; 
+    font-family: 'Inclusive Sans', sans-serif;
+}
