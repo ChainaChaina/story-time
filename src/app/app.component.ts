@@ -9,9 +9,6 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  step: number = 1
-
-
-
+  step:number = 1
   title = 'minha-historia';
 }
