@@ -2,9 +2,7 @@
   <app-header></app-header>
   
   <div class="body">
-    <h1 *ngIf="step==1">EVENTO 1</h1>
-    <h1 *ngIf="step==2">EVENTO 2</h1>
-    <!-- <app-characters *ngIf="step==1"> </app-characters> -->
+    <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==1"> </app-genre>
 
   </div>
 

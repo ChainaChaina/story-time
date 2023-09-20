@@ -1,0 +1,44 @@
+.card-body{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 18rem;
+    width: 15rem;
+    
+    padding: 2rem;
+    background-color: rgb(241, 241, 241);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    // border: 1px solid black;
+    border-radius: 10px;
+    img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    h1{
+        font-size: 1rem;
+        color: black;
+        margin: 1rem auto 0px auto;
+        font-family: 'Inclusive Sans', sans-serif;
+    }
+}
+
+.card-body:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 20px;
+}
+
+@media (max-width: 1200px) {
+   .card-body{
+       margin: 1rem;
+       width: 12rem;
+       height: 15rem;
+   }
+}
+
+@media (max-width: 580px) {
+    .card-body{
+        margin: 0.5rem;
+        width: 10rem;
+        height: 12rem;
+    }
+}
+
