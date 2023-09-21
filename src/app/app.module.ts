@@ -7,6 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GenreComponent } from './components/pages/genre/genre.component';
 import { CardComponent } from './components/card/card.component';
+import { BackgroundComponent } from './components/pages/background/background.component';
+import { CharacterComponent } from './components/pages/character/character.component';
+import { HistoryComponent } from './components/pages/history/history.component';
 
 
 
@@ -17,6 +20,9 @@ import { CardComponent } from './components/card/card.component';
     FooterComponent,
     GenreComponent,
     CardComponent,
+    BackgroundComponent,
+    CharacterComponent,
+    HistoryComponent,
 
   ],
   imports: [

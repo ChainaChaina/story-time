@@ -3,7 +3,9 @@
   
   <div class="body">
     <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==1"> </app-genre>
-
+    <app-background (clickEventHandle)="selectGenre($event)" *ngIf="step==2"> </app-background>
+    <app-character (clickEventHandle)="selectGenre($event)" *ngIf="step==3"> </app-character>
+    <app-history *ngIf="step == 4" > </app-history>
   </div>
 
   <app-footer></app-footer>
