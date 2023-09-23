@@ -1,3 +1,11 @@
+<body>
+
+<div *ngIf="loading" class="spinner-container">
+    <mat-spinner mode="indeterminate" class="spinner-container"></mat-spinner>
+</div>
+
+<div *ngIf="!loading">
+
 <h1 *ngIf="chapter == 1" (click)="nextChapter()" class="chapter ">
     Julio e o Robô na Floresta Encantada
 </h1>
@@ -27,3 +35,5 @@
     emocionantes na floresta encantada para sempre. Eles provaram que com amor e amizade, qualquer desafio pode ser
     superado.
 </h3>
+</div>
+</body>

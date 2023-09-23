@@ -1,6 +1,7 @@
 <div class="container">
   <app-header></app-header>
-  
+
+  <!-- <div *ngif="character$ | async as body "> -->
   <div class="body">
     <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==1"> </app-genre>
     <app-background (clickEventHandle)="selectGenre($event)" *ngIf="step==2"> </app-background>
@@ -9,4 +10,5 @@
   </div>
 
   <app-footer></app-footer>
+<!-- </div> -->
 </div>

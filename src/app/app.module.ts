@@ -10,8 +10,8 @@ import { CardComponent } from './components/card/card.component';
 import { BackgroundComponent } from './components/pages/background/background.component';
 import { CharacterComponent } from './components/pages/character/character.component';
 import { HistoryComponent } from './components/pages/history/history.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -25,9 +25,13 @@ import { HistoryComponent } from './components/pages/history/history.component';
     HistoryComponent,
 
   ],
+  exports: [MatProgressSpinnerModule
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
