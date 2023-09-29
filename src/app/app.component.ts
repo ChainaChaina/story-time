@@ -11,10 +11,15 @@ export class AppComponent {
 
   step:number = 1
   title = 'minha-historia';
+  name:string = ''
 
   genre:string = ''
   background:string = ''
   characters = []
+
+  getName(name:string){
+    this.name = name
+  }
 
   selectGenre(e:any){
     console.log('GENERO ESCOLHIDO: ', e)

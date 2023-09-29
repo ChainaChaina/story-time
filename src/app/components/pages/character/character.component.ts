@@ -12,4 +12,11 @@ export class CharacterComponent {
   handleClick(e:any){
     this.clickEventHandle.emit(e)
   }
+
+  @Output() enviarNome = new EventEmitter<string>();
+  nome: string = '';
+
+  emitirNome() {
+    this.enviarNome.emit(this.nome);
+  }
 }

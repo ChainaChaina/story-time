@@ -6,5 +6,6 @@
         <app-card (clickEventHandle)="handleClick($event)" title="Astronauta" img_src=".\assets\imgs\characters\Astronauta.png" > </app-card>
         <app-card (clickEventHandle)="handleClick($event)" title="Fada" img_src=".\assets\imgs\characters\Fada.png" > </app-card>
     </div>
-  </div>
-  
+    <input type="text" [(ngModel)]="nome">
+   <button (click)="emitirNome()">Enviar Nome</button>
+</div>

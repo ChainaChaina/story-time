@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-history',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HistoryComponent implements OnInit {
 
   loading = true;
+  @Input() name!: string;
+  chapter: number = 1
 
   ngOnInit(): void {
     // Simule um carregamento demorado (substitua isso com sua lógica real de carregamento)
@@ -16,7 +18,6 @@ export class HistoryComponent implements OnInit {
     }, 3000); // Simula um carregamento de 3 segundos
   }
 
-  chapter: number = 1
 
   nextChapter(){
     this.chapter = this.chapter + 1
