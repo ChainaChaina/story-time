@@ -13,6 +13,7 @@ import { HistoryComponent } from './components/pages/history/history.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BackgroundComponent,
     CharacterComponent,
     HistoryComponent,
+    LoginComponent,
 
   ],
   exports: [MatProgressSpinnerModule

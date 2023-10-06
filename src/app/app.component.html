@@ -3,10 +3,11 @@
 
   <!-- <div *ngif="character$ | async as body "> -->
   <div class="body">
-    <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==1"> </app-genre>
-    <app-background (clickEventHandle)="selectGenre($event)" *ngIf="step==2"> </app-background>
-    <app-character (enviarNome)="getName($event)" (clickEventHandle)="selectGenre($event)" *ngIf="step==3"> </app-character>
-    <app-history [name]="name" *ngIf="step == 4" > </app-history>
+    <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==2"> </app-genre>
+    <app-background (clickEventHandle)="selectGenre($event)" *ngIf="step==3"> </app-background>
+    <app-character (enviarNome)="getName($event)" (clickEventHandle)="selectGenre($event)" *ngIf="step==4"> </app-character>
+    <app-history [name]="name" *ngIf="step == 5" > </app-history>
+    <!-- <app-login [login]="login" *ngIf="step == 1"></app-login> -->
   </div>
 
   <app-footer></app-footer>
