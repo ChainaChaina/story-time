@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Nós fale de você</h1>
+    <p>
+        Meu nome é
+    </p>
+    <input [(ngModel)]="name" type="text">
+    <div class="center-div">
+        <app-card (clickEventHandle)="handleClick($event)"  title="Menina" img_src=".\assets\imgs\characters\Princesa.png" > </app-card>
+        <app-card (clickEventHandle)="handleClick($event)" title="Indefinido" img_src=".\assets\imgs\characters\Astronauta.png" > </app-card>
+        <app-card (clickEventHandle)="handleClick($event)" title="Menino" img_src=".\assets\imgs\characters\Pirata.png" > </app-card>
+    </div>
+</div>

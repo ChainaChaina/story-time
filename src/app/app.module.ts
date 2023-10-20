@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/pages/login/login.component';
+import { GenderComponent } from './components/pages/gender/gender.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoginComponent } from './components/pages/login/login.component';
     CharacterComponent,
     HistoryComponent,
     LoginComponent,
+    GenderComponent
 
   ],
   exports: [MatProgressSpinnerModule
