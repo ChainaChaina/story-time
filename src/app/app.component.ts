@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  step:number = 1
+  step:number = 0
   title = 'minha-historia';
   name:string = ''
 
@@ -21,9 +21,21 @@ export class AppComponent {
     this.name = name
   }
 
+  nextStep(){
+    this.step = this.step + 1
+  }
+
+  setStep(step:number){
+    this.step = step
+  }
+
+  backStep(){
+    this.step = this.step - 1
+  }
+
   selectGenre(e:any){
     console.log('GENERO ESCOLHIDO: ', e)
     this.genre = e
-    this.step = this.step + 1
+    this.nextStep()
   }
 }

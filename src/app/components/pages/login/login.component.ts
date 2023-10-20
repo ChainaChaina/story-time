@@ -1,5 +1,6 @@
 import { Component, Output , EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -9,18 +10,26 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  constructor(private router: Router) {};
-  // @Output() Entrada = new EventEmitter<string>();
-  // nome: string = '';
 
-  // emitirNome() {
-  //   this.Entrada.emit(this.nome);
-  // }
-  login(): void {
+  constructor(
+    private router: Router,
+    private toastr: ToastrService
+    ) {};
+
+    @Output() login = new EventEmitter()
+
+
+  authenticate(): void {
     if (this.username === 'usuario' && this.password === 'senha') {
-      this.router.navigate(['/']);
+      let user = {
+        username: this.username,
+        password: this.password
+      }
+      localStorage.setItem( 'user',JSON.stringify(user))
+      this.login.emit()
+      this.toastr.success('Logado')
     } else {
-      alert('Credenciais incorretas. Tente novamente.');
+      this.toastr.error('Tente novamente')
     }
   }
 }

@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  @Output() setStep = new EventEmitter()
+
   handleClick() {
-    console.log("O link foi clicado!");
-}
+    if(localStorage.getItem('user')){
+      this.setStep.emit(1)
+    }
+  }
+
+
 }

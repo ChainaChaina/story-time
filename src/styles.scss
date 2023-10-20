@@ -1,3 +1,5 @@
+@import url(/src/toast.css);
+
 *{
     padding: 0;
     margin: 0;
@@ -7,17 +9,12 @@
 
 a{
     text-decoration: none;
-    color: #fff;
     transition: 0.4s;
 }
 
 a:hover {
     color: #dec229;
     font-weight: bold;
-}
-
-div{
-   background-color: #f2f3f5; 
 }
 
 .title-1{
@@ -38,3 +35,4 @@ div{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

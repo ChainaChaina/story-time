@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/pages/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoginComponent } from './components/pages/login/login.component';
     CharacterComponent,
     HistoryComponent,
     LoginComponent,
+    
 
   ],
   exports: [MatProgressSpinnerModule
@@ -36,7 +38,13 @@ import { LoginComponent } from './components/pages/login/login.component';
     BrowserAnimationsModule,
     FormsModule,
     MatProgressSpinnerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+       timeOut: 3000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+      progressBar: true
+    }), 
   ],
   providers: [],
   bootstrap: [AppComponent]

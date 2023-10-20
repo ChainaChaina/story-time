@@ -1,13 +1,13 @@
 <div class="container">
-  <app-header></app-header>
+  <app-header *ngIf="step !=0 " (setStep)="setStep($event)"></app-header>
 
-  <!-- <div *ngif="character$ | async as body "> -->
+  <!-- <div *ngif="character$ | async as body "> -->   
   <div class="body">
+    <app-login (login)="nextStep()" *ngIf="step == 0"></app-login>
     <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==1"> </app-genre>
     <app-background (clickEventHandle)="selectGenre($event)" *ngIf="step==2"> </app-background>
-    <app-character (enviarNome)="getName($event)" (clickEventHandle)="selectGenre($event)" *ngIf="step==3"> </app-character>
+    <app-character (enviarNome)="selectGenre($event)" (clickEventHandle)="selectGenre($event)" *ngIf="step==3"> </app-character>
     <app-history [name]="name" *ngIf="step == 4" > </app-history>
-    <!-- <app-login [login]="login" *ngIf="step == 1"></app-login> -->
   </div>
 
   <app-footer></app-footer>
