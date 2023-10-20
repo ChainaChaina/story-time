@@ -2,12 +2,13 @@
   <app-header *ngIf="step !=0 " (setStep)="setStep($event)"></app-header>
 
   <div class="body">
-    <app-gender (clickEventHandle)="selectGender($event)"  *ngIf="step==0"> </app-gender>
-    <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==1"> </app-genre>
-    <app-background (clickEventHandle)="selectBackground($event)" *ngIf="step==2"> </app-background>
-    <app-character  (clickEventHandle)="selectCharacter($event)" *ngIf="step==3"> </app-character>
-    <app-character  (clickEventHandle)="selectSuports($event)" [support]="true" *ngIf="step==4"> </app-character>
-    <app-history [name]="name" *ngIf="step == 5" > </app-history>
+    <app-login *ngIf="step==0" (login)="nextStep()"> </app-login>
+    <app-gender (clickEventHandle)="selectGender($event)"  *ngIf="step==1"> </app-gender>
+    <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==2"> </app-genre>
+    <app-background (clickEventHandle)="selectBackground($event)" *ngIf="step==3"> </app-background>
+    <app-character  (clickEventHandle)="selectCharacter($event)" [support]="false" *ngIf="step==4"> </app-character>
+    <app-character  (clickEventHandle)="selectSuports($event)" [support]="true" *ngIf="step==5"> </app-character>
+    <app-history [name]="name" *ngIf="step == 6" > </app-history>
   </div>
 
   <app-footer></app-footer>

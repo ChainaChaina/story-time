@@ -25,7 +25,7 @@ export class LoginComponent {
         username: this.username,
         password: this.password
       }
-      localStorage.setItem( 'user',JSON.stringify(user))
+      localStorage.setItem('user',JSON.stringify(user))
       this.login.emit()
       this.toastr.success('Logado')
     } else {
