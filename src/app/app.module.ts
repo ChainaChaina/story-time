@@ -15,6 +15,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/pages/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
+import { GenderComponent } from './components/pages/gender/gender.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
     HistoryComponent,
     LoginComponent,
     
+    GenderComponent
 
   ],
   exports: [MatProgressSpinnerModule

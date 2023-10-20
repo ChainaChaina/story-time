@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-character',
@@ -7,16 +7,31 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class CharacterComponent {
 
+  @Input() support:boolean = false
   @Output() clickEventHandle = new EventEmitter();
 
-  handleClick(e:any){
-    this.clickEventHandle.emit(e)
+  supports: any =[]
+
+  handleClick(e:any, id:number){
+    if(this.support){
+      //arrumar
+      if (this.supports.includes({id: id, role: e})){
+        console.log(this.supports)
+        this.supports = this.supports.filter((i:any)=> i = id)
+        console.log(this.supports)
+      }else{
+        this.supports.push({id: id, role: e})
+      }
+    }else{
+      this.clickEventHandle.emit(e)
+    }
+   
   }
 
   @Output() enviarNome = new EventEmitter<string>();
   nome: string = '';
 
-  emitirNome() {
-    this.enviarNome.emit(this.nome);
+  finish() {
+    this.clickEventHandle.emit(this.supports)
   }
 }
