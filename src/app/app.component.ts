@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  step: number = 4
+  step: number = 0
   title = 'minha-historia';
   prompt: string = ''
 

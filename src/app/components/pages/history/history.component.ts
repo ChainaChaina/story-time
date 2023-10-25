@@ -18,7 +18,6 @@ export class HistoryComponent implements OnInit {
     }, 3000); // Simula um carregamento de 3 segundos
   }
 
-
   nextChapter(){
     this.chapter = this.chapter + 1
   }
