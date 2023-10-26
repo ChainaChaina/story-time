@@ -30,7 +30,7 @@ import { StoryTimeService} from './components/services/story-time.service';
     LoginComponent,
 
     GenderComponent,
-    StoryTimeService,
+  
 
   ],
   exports: [MatProgressSpinnerModule
