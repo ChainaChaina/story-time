@@ -16,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/pages/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { GenderComponent } from './components/pages/gender/gender.component';
-
+import { StoryTimeService} from './components/services/story-time.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +28,9 @@ import { GenderComponent } from './components/pages/gender/gender.component';
     CharacterComponent,
     HistoryComponent,
     LoginComponent,
-    
-    GenderComponent
+
+    GenderComponent,
+    StoryTimeService,
 
   ],
   exports: [MatProgressSpinnerModule
@@ -46,9 +47,9 @@ import { GenderComponent } from './components/pages/gender/gender.component';
       positionClass: 'toast-top-center',
       preventDuplicates: true,
       progressBar: true
-    }), 
+    }),
   ],
-  providers: [],
+  providers: [StoryTimeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
