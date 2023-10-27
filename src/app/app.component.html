@@ -2,6 +2,7 @@
   <app-header *ngIf="step !=0 " (setStep)="setStep($event)"></app-header>
 
   <div class="body">
+
     <app-login *ngIf="step==0" (login)="nextStep()"> </app-login>
     <app-gender (clickEventHandle)="selectGender($event)"  *ngIf="step==1"> </app-gender>
     <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==2"> </app-genre>
@@ -9,6 +10,7 @@
     <app-character  (clickEventHandle)="selectCharacter($event)" [support]="false" *ngIf="step==4"> </app-character>
     <app-character  (clickEventHandle)="selectSuports($event)" [support]="true" *ngIf="step==5"> </app-character>
     <app-history [name]="name" *ngIf="step == 6" > </app-history>
+    <!-- <app-cadastro *ngIf="step==7" (cadastro)="nextStep()"> </app-cadastro> -->
   </div>
 
   <app-footer></app-footer>

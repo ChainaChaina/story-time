@@ -5,22 +5,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StoryTimeService {
-  private baseUrl = './app.component.html';
+  private baseUrl = 'https://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
-  // Operação de leitura (GET)
+  // // Operação de leitura (GET)
   // getUsername(username: string): Observable<any> {
   //   return this.http.get<StoryTimeService>(`${this.baseUrl}/${username}`);
   // }
 
-  // Operação de criação (POST)-------------------------------------------
-  createUsername(username:string ):Observable<StoryTimeService> {
-    return this.http.post<StoryTimeService>(this.baseUrl, username);
+  // Operação de criação (POST)
+  createHistory(message:string ):Observable<any> {
+    return this.http.post<StoryTimeService>(this.baseUrl,{message: "Crie uma história elfos, magos e valar"});
   }
-  // Operação de exclusão (DELETE)
-  deleteUsername(username: string):Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${username}`);
-  }
+  // // Operação de exclusão (DELETE)
+  // deleteUsername(username: string):Observable<any> {
+  //   return this.http.delete(`${this.baseUrl}/${username}`);
+  // }
 }
 
