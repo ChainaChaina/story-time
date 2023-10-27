@@ -18,6 +18,12 @@ export class StoryTimeService {
   createUsername(username:string ):Observable<StoryTimeService> {
     return this.http.post<StoryTimeService>(this.baseUrl, username);
   }
+
+  // Operação de criação (POST)-------------------------------------------
+  createStory(chapter:string ):Observable<StoryTimeService> {
+    return this.http.post<StoryTimeService>(this.baseUrl, chapter);
+  }
+
   // Operação de exclusão (DELETE)
   deleteUsername(username: string):Observable<any> {
     return this.http.delete(`${this.baseUrl}/${username}`);
