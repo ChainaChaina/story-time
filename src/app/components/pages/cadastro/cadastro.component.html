@@ -1,0 +1,31 @@
+<main class="principal">
+  <h2 class="principal__titulo">Faça seu cadastro</h2>
+
+  <form class="principal__formulario" id="formulario" #f="ngForm">
+      <!-- Campo de Nome -->
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" ngModel required>
+      </div>
+    <!-- Campo de Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" ngModel required>
+    </div>
+
+    <!-- Campo de Senha -->
+    <div class="form-group">
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" ngModel required>
+    </div>
+
+    <div>
+      <!-- Seu botão existente -->
+        <button type="submit">Cadastrar</button>
+
+      <!-- Texto de "Já tem uma conta? Faça Login" como um link -->
+      <p>Já tem uma conta? <a routerLink="/login">Faça Login</a></p>
+    </div>
+
+  </form>
+</main>

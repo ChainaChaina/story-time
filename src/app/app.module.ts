@@ -17,6 +17,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { GenderComponent } from './components/pages/gender/gender.component';
 import { StoryTimeService} from './components/services/story-time.service';
+import { CadastroComponent } from './components/pages/cadastro/cadastro.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { StoryTimeService} from './components/services/story-time.service';
     HistoryComponent,
     LoginComponent,
     GenderComponent,
+    CadastroComponent,
   ],
 
   exports: [MatProgressSpinnerModule

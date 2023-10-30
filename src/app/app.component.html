@@ -9,6 +9,7 @@
     <app-character  (clickEventHandle)="selectCharacter($event)" [support]="false" *ngIf="step==4"> </app-character>
     <app-character  (clickEventHandle)="selectSuports($event)" [support]="true" *ngIf="step==5"> </app-character>
     <app-history [name]="name" *ngIf="step == 6" > </app-history>
+    <!-- <app-cadastro *ngIf="step==0" (cadastro)="nextStep()"></app-cadastro> -->
   </div>
 
   <app-footer></app-footer>
