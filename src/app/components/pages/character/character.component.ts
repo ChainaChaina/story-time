@@ -9,7 +9,9 @@ export class CharacterComponent {
 
   @Input() support:boolean = false
   @Output() clickEventHandle = new EventEmitter();
+  @Output() enviarNome = new EventEmitter<string>();
 
+  nome: string = '';
   supports: any =[]
 
   handleClick(e:any, id:number){
@@ -25,11 +27,7 @@ export class CharacterComponent {
     }else{
       this.clickEventHandle.emit(e)
     }
-   
   }
-
-  @Output() enviarNome = new EventEmitter<string>();
-  nome: string = '';
 
   finish() {
     this.clickEventHandle.emit(this.supports)

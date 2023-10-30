@@ -10,9 +10,9 @@ export class StoryTimeService {
   constructor(private http: HttpClient) { }
 
   // Operação de leitura (GET)
-  // getUsername(username: string): Observable<any> {
-  //   return this.http.get<StoryTimeService>(`${this.baseUrl}/${username}`);
-  // }
+  getUsername(username: string): Observable<any> {
+    return this.http.get<StoryTimeService>(`${this.baseUrl}/${username}`);
+  }
 
   // Operação de criação (POST)-------------------------------------------
   createUsername(username:string ):Observable<StoryTimeService> {

@@ -28,11 +28,9 @@ import { StoryTimeService} from './components/services/story-time.service';
     CharacterComponent,
     HistoryComponent,
     LoginComponent,
-
     GenderComponent,
-  
-
   ],
+
   exports: [MatProgressSpinnerModule
   ],
   imports: [
@@ -49,6 +47,7 @@ import { StoryTimeService} from './components/services/story-time.service';
       progressBar: true
     }),
   ],
+
   providers: [StoryTimeService],
   bootstrap: [AppComponent]
 })
