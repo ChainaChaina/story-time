@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { StoryTimeService } from '../../services/story-time.service';
 
 @Component({
   selector: 'app-history',
@@ -11,6 +12,8 @@ export class HistoryComponent implements OnInit {
   @Input() name!: string;
   chapter: number = 1
 
+  constructor(private storyTimeService: StoryTimeService) { }
+
   ngOnInit(): void {
     // Simule um carregamento demorado (substitua isso com sua lógica real de carregamento)
     setTimeout(() => {
@@ -19,7 +22,9 @@ export class HistoryComponent implements OnInit {
   }
 
   nextChapter(){
-    this.chapter = this.chapter + 1
+    this.chapter = this.chapter + 1;
+
+    this.storyTimeService.createStory(this.chapter);
   }
 
 }

@@ -15,12 +15,12 @@ export class StoryTimeService {
   }
 
   // Operação de criação (POST)-------------------------------------------
-  createUsername(username:string ):Observable<StoryTimeService> {
+  createUsername(username:string ):Observable<any> {
     return this.http.post<StoryTimeService>(this.baseUrl, username);
   }
 
   // Operação de criação (POST)-------------------------------------------
-  createStory(chapter:string ):Observable<StoryTimeService> {
+  createStory(chapter:number ):Observable<any> {
     return this.http.post<StoryTimeService>(this.baseUrl, chapter);
   }
 
