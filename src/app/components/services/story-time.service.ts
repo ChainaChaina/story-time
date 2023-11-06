@@ -14,12 +14,12 @@ export class StoryTimeService {
     return this.http.get<StoryTimeService>(`${this.baseUrl}/${username}`);
   }
 
-  // Operação de criação (POST)-------------------------------------------
-  createUsername(username:string ):Observable<any> {
+  // Operação de criação (POST)
+  createCadatro(username:string ):Observable<any> {
     return this.http.post<StoryTimeService>(this.baseUrl, username);
   }
 
-  // Operação de criação (POST)-------------------------------------------
+  // Operação de criação (POST)
   createStory(chapter:number ):Observable<any> {
     return this.http.post<StoryTimeService>(this.baseUrl, chapter);
   }

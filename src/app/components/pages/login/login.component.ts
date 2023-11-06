@@ -1,6 +1,7 @@
 import { Component, Output , EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { StoryTimeService } from '../../services/story-time.service';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +11,12 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  
+
 
   constructor(
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    // private storyTimeService: StoryTimeService
     ) {};
 
     @Output() login = new EventEmitter()
@@ -32,5 +34,7 @@ export class LoginComponent {
     } else {
       this.toastr.error('Tente novamente')
     }
+    // this.storyTimeService.getUsername(this.username)
+
   }
 }
