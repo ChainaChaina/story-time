@@ -1,34 +1,42 @@
 .login-container {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   background-color: #f0f0f0;
 }
 
-h2 {
-  color: black;
+.PrincipalLogin {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-
 .form-group {
-  margin: 10px 0;
-}
+  margin-bottom: 18px;
 
+}
 label {
+  font-weight: bold;
   font-size: 18px;
   color: #333;
 }
-
+h2 {
+  color: black;
+}
 input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
   font-size: 16px;
 }
-
 button {
-  background-color: royalblue;
+  display: inline-block;
+  background-color: #007bff;
   color: #fff;
-  font-size: 18px;
   padding: 10px 20px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
