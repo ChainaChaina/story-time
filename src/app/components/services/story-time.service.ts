@@ -15,13 +15,20 @@ export class StoryTimeService {
   // GET Lista Historia por ID
 
   // Operação de criação (POST)
-  createStory(chapter:number ):Observable<any> {
-    return this.http.post<StoryTimeService>(this.baseUrl, chapter);
-  };
+  createStory(chapter: number): Observable<any> {
+    const url = `${this.baseUrl}/cadastro`;
+    const body = { name: String
+    };
 
-  // const headers = new HttpHeaders({
-  //   'Content-Type': 'application/json'
-  // });
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.post<StoryTimeService>(url, body, { headers }).pipe(
+      map((response: any) => response),
+      catchError((error: any) => error(error))
+    );
+  }
 
   // DELETE Deletar História
 
@@ -46,7 +53,7 @@ export class StoryTimeService {
       'Content-Type': 'application/json'
     });
 
-    return this.http.post(url, body, { headers }).pipe(
+    return this.http.post<StoryTimeService>(url, body, { headers }).pipe(
       map((response: any) => response),
       catchError((error: any) => error(error))
     );

@@ -12,7 +12,11 @@ export class HistoryComponent implements OnInit {
   @Input() name!: string;
   chapter: number = 1
 
-  constructor(private storyTimeService: StoryTimeService) { }
+  storyTimeService: StoryTimeService;
+
+  constructor() {
+    this.storyTimeService.createStory(this.chapter);
+  }
 
   ngOnInit(): void {
     // Simule um carregamento demorado (substitua isso com sua lógica real de carregamento)
@@ -24,7 +28,5 @@ export class HistoryComponent implements OnInit {
   nextChapter(){
     this.chapter = this.chapter + 1;
 
-    this.storyTimeService.createStory(this.chapter);
   }
-
 }
