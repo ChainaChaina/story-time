@@ -9,7 +9,7 @@ import { StoryTimeService } from '../../services/story-time.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  username: string = '';
+  userName: string = '';
   password: string = '';
 
 
@@ -23,9 +23,10 @@ export class LoginComponent {
 
 
   authenticate(): void {
-    if (this.username === 'usuario' && this.password === 'senha') {
+    if (this.userName
+       === 'usuario' && this.password === 'senha') {
       let user = {
-        username: this.username,
+        userName: this.userName,
         password: this.password
       }
       localStorage.setItem('user',JSON.stringify(user))
