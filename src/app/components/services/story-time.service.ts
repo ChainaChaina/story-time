@@ -1,32 +1,61 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError, catchError, map } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class StoryTimeService {
-  private baseUrl = './app.component.html';
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
-  // Operação de leitura (GET)
-  getUsername(username: string): Observable<any> {
-    return this.http.get<StoryTimeService>(`${this.baseUrl}/${username}`);
-  }
+  // Story
+  // POST Salvar História
 
-  // Operação de criação (POST)
-  createCadatro(username:string ):Observable<any> {
-    return this.http.post<StoryTimeService>(this.baseUrl, username);
-  }
+  // GET Lista Historia por ID
 
   // Operação de criação (POST)
   createStory(chapter:number ):Observable<any> {
     return this.http.post<StoryTimeService>(this.baseUrl, chapter);
   }
 
+  // DELETE Deletar História
+
+  // User
+  // GET Listar Usuario
+  getUsername(username: string): Observable<any> {
+    return this.http.get<StoryTimeService>(`${this.baseUrl}/${username}`);
+  }
+
+  // GET Lista Usuario por ID
+
+  // POST Criar Usuario
+  // createCadatro(username:string ):Observable<any> {
+  //   return this.http.post<StoryTimeService>(this.baseUrl, username);
+  // }
+
+  createCadastro(userName: string): Observable<any> {
+    const url = `${this.baseUrl}/login`;
+    const body = { userName }; 
+
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.post(url, body, { headers }).pipe(
+      map((response: any) => response),
+      catchError((error: any) => throwError(error))
+    );
+  }
+
+  // PUT Atualiza Usuario
+
   // Operação de exclusão (DELETE)
   deleteUsername(username: string):Observable<any> {
     return this.http.delete(`${this.baseUrl}/${username}`);
   }
+
+  // POST Autentica Login
 }
 
