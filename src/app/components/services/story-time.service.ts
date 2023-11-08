@@ -17,7 +17,11 @@ export class StoryTimeService {
   // Operação de criação (POST)
   createStory(chapter:number ):Observable<any> {
     return this.http.post<StoryTimeService>(this.baseUrl, chapter);
-  }
+  };
+
+  // const headers = new HttpHeaders({
+  //   'Content-Type': 'application/json'
+  // });
 
   // DELETE Deletar História
 
@@ -30,14 +34,13 @@ export class StoryTimeService {
   // GET Lista Usuario por ID
 
   // POST Criar Usuario
-  // createCadatro(username:string ):Observable<any> {
-  //   return this.http.post<StoryTimeService>(this.baseUrl, username);
-  // }
-
-  createCadastro(userName: string): Observable<any> {
-    const url = `${this.baseUrl}/login`;
-    const body = { userName }; 
-
+  createCadastro(userName: string, email: string, password: string): Observable<any> {
+    const url = `${this.baseUrl}/cadastro`;
+    const body = {
+      userName: userName,
+      password: password,
+      email: email
+    };
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
@@ -45,9 +48,10 @@ export class StoryTimeService {
 
     return this.http.post(url, body, { headers }).pipe(
       map((response: any) => response),
-      catchError((error: any) => throwError(error))
+      catchError((error: any) => error(error))
     );
   }
+
 
   // PUT Atualiza Usuario
 
