@@ -18,6 +18,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { GenderComponent } from './components/pages/gender/gender.component';
 import { StoryTimeService} from './components/services/story-time.service';
 import { CadastroComponent } from './components/pages/cadastro/cadastro.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,9 +36,9 @@ import { CadastroComponent } from './components/pages/cadastro/cadastro.componen
     CadastroComponent,
   ],
 
-  exports: [MatProgressSpinnerModule
-  ],
+  exports: [MatProgressSpinnerModule],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -43,14 +46,14 @@ import { CadastroComponent } from './components/pages/cadastro/cadastro.componen
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
-       timeOut: 3000,
+      timeOut: 3000,
       positionClass: 'toast-top-center',
       preventDuplicates: true,
-      progressBar: true
+      progressBar: true,
     }),
   ],
 
   providers: [StoryTimeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,13 +1,7 @@
-<body>
 
-<div *ngIf="loading" class="spinner-container">
-    <mat-spinner mode="indeterminate" class="spinner-container"></mat-spinner>
-</div>
-
-<div *ngIf="!loading">
-
+<div *ngIf="story">
 <h1 *ngIf="chapter == 1" (click)="nextChapter()" class="chapter ">
-    {{ name }} e o Robô na Floresta Encantada
+    {{story.titulo}}
 </h1>
 
 <div class="center-div" class="img_container">
@@ -15,29 +9,16 @@
 </div>
 
 <h3 *ngIf="chapter == 1" (click)="nextChapter()" class="story">
-    Havia uma vez um cavalheiro chamado {{name}} que vivia em um castelo na floresta encantada.<br> {{name}} era corajoso e
-    bondoso. Um dia, enquanto cavalgava na floresta, ele ouviu um som metálico<br> e encontrou um robô amigável perdido,
-    chamado Robôberto.
+   {{story.paragrafo1}}
 </h3>
 
-<h1 *ngIf="chapter == 2" (click)="nextChapter()" class="chapter ">
-    Em Busca da Princesa Adormecida
+<h1 *ngIf="chapter == 2" (click)="nextChapter()" class="story ">
+    {{story.paragrafo2}}
 </h1>
 
-<h3 *ngIf="chapter == 2" (click)="nextChapter()" class="story">
-    {{name}} e Robôberto se tornaram amigos e decidiram explorar a floresta. {{name}} contou a Robôberto sobre a lenda da
-    princesa adormecida na floresta. Juntos, eles enfrentaram desafios mágicos e enigmas misteriosos.
+<h3 *ngIf="chapter == 3" (click)="nextChapter()" class="story">
+    {{story.paragrafo3}}
 </h3>
 
-<h1 *ngIf="chapter == 3" class="chapter ">
-    O Despertar da Princesa e a Amizade Eterna
-</h1>
-
-<h3 *ngIf="chapter == 3" class="story">
-    {{name}} e Robôberto chegaram a um castelo encantado e encontraram a princesa Aurora adormecida. {{name}} a acordou com um
-    beijo gentil. A floresta celebrou, e {{name}}, Aurora e Robôberto se tornaram amigos inseparáveis, vivendo aventuras
-    emocionantes na floresta encantada para sempre. Eles provaram que com amor e amizade, qualquer desafio pode ser
-    superado.
-</h3>
 </div>
-</body>
+
