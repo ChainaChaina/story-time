@@ -1,4 +1,4 @@
-<div class="container">
+<div  *ngIf="!loading" class="container">
   <app-header *ngIf="step !=0 " (setStep)="setStep($event)"></app-header>
 
   <div class="body">
@@ -8,10 +8,16 @@
     <app-background (clickEventHandle)="selectBackground($event)" *ngIf="step==3"> </app-background>
     <app-character  (clickEventHandle)="selectCharacter($event)" [support]="false" *ngIf="step==4"> </app-character>
     <app-character  (clickEventHandle)="selectSuports($event)" [support]="true" *ngIf="step==5"> </app-character>
-    <app-history [name]="name" *ngIf="step == 6" > </app-history>
+    <app-history [story]="story" [name]="name" *ngIf="step == 6" > </app-history>
     <!-- <app-cadastro *ngIf="step==0" (cadastro)="nextStep()"></app-cadastro> -->
   </div>
 
   <app-footer></app-footer>
 <!-- </div> -->
+</div>
+
+<div *ngIf="loading" class="spinner-container">
+
+  <h1>CALMA AEW TO CARREGANDO</h1>
+  <mat-spinner mode="indeterminate" class="spinner-container"></mat-spinner>
 </div>

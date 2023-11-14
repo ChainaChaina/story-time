@@ -10,12 +10,14 @@ export class HistoryComponent implements OnInit {
 
   loading = true;
   @Input() name!: string;
+  @Input() story
+  
   chapter: number = 1
 
   storyTimeService: StoryTimeService;
 
   constructor() {
-    this.storyTimeService.createStory(this.chapter);
+    //this.storyTimeService.createStory(this.chapter);
   }
 
   ngOnInit(): void {

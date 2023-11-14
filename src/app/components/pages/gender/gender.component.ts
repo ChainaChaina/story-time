@@ -8,7 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class GenderComponent {
 
   @Output() clickEventHandle = new EventEmitter();
-  name: string = '' 
+  name: string = ''
 
   handleClick(e:any){
     this.clickEventHandle.emit({
