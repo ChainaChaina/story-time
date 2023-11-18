@@ -11,7 +11,7 @@ export class CardComponent {
   @Input() img_src:string = ''
   @Output() clickEventHandle = new EventEmitter<string>();
   constructor(){
-    
+
   }
 
   handleClick(){

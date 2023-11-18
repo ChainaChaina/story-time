@@ -1,12 +1,21 @@
 <div class="container">
-    <h1>Nós fale de você</h1>
-    <p>
-        Meu nome é
-    </p>
-    <input [(ngModel)]="name" type="text">
-    <div class="center-div">
-        <app-card (clickEventHandle)="handleClick($event)"  title="Menina" img_src=".\assets\imgs\characters\Princesa.png" > </app-card>
-        <app-card (clickEventHandle)="handleClick($event)" title="Indefinido" img_src=".\assets\imgs\characters\Astronauta.png" > </app-card>
-        <app-card (clickEventHandle)="handleClick($event)" title="Menino" img_src=".\assets\imgs\characters\Pirata.png" > </app-card>
-    </div>
+    <h1>Escolha um nome bem criativo</h1>
+    <input class="btn1" [(ngModel)]="name" type="text">
+
+    <div  class="center-div">
+    <h1>Escolha o gênero do seu personagem</h1>
+
+    <button mat-fab extended class="button-span">
+        <div  (clickEventHandle)="handleClick($event)" >
+            <img class="img1" src=".\assets\4_Genero-Personagem\masculino.png" >
+            <span class="btnn">Masculino</span>
+        </div>
+    </button>
+
+    <button mat-fab extended class="button-span1">
+        <div  (clickEventHandle)="handleClick($event)" >
+            <img class="img2" src=".\assets\4_Genero-Personagem\feminino.png" >
+            <span class="btnn1">Feminino</span>
+        </div>
+    </button>
 </div>

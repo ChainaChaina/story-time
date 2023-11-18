@@ -2,10 +2,12 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    position: relative;
+    color: #3469FF;
 
     h1 {
-        margin: 0px auto;
-
+        margin: 10px auto;
+        font-weight: 550;
     }
 }
 
@@ -18,10 +20,8 @@
     width: 100%;
 }
 
-
 @media (max-width: 580px) {
     .center-div{
         padding: 1rem;
     }
 }
-

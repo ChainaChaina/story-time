@@ -2,11 +2,31 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    position: relative;
+    color: #3469FF;
 
     h1 {
-        margin: 0px auto;
-
+        margin: 10px auto;
+        font-weight: 550;
     }
+}
+
+.btnChar {
+
+    font-family: 'Inclusive Sans', sans-serif;
+    position: absolute;
+    top: 88%;
+    left: 85%;
+    text-align: center auto;
+    background: #3469FF;
+    padding: flex auto;
+    border-radius: 100px;
+    width: 150px;
+    height: 35px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .center-div {
@@ -18,10 +38,8 @@
     width: 100%;
 }
 
-
 @media (max-width: 580px) {
     .center-div{
         padding: 1rem;
     }
 }
-

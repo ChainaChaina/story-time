@@ -1,12 +1,12 @@
 <div class="container">
-    <h1 *ngIf="!supports">Escolha um Personagem</h1>
+    <h1 *ngIf="!supports">Escolha o Personagem da sua história</h1>
     <h1 *ngIf="supports">Escolha outros aventureiros</h1>
     <div class="center-div">
-        <app-card (clickEventHandle)="handleClick($event,1)" title="Princesa" img_src=".\assets\imgs\characters\Princesa.png" > </app-card>
-        <app-card (clickEventHandle)="handleClick($event,2)" title="Pirata" img_src=".\assets\imgs\characters\Pirata.png" > </app-card>
-        <app-card (clickEventHandle)="handleClick($event,3)" title="Astronauta" img_src=".\assets\imgs\characters\Astronauta.png" > </app-card>
-        <app-card (clickEventHandle)="handleClick($event,4)" title="Fada" img_src=".\assets\imgs\characters\Fada.png" > </app-card>
+        <app-card (clickEventHandle)="handleClick($event,1)" title="Astronauta" img_src=".\assets\3_Personagens\1_Astronauta.jpg" > </app-card>
+        <app-card (clickEventHandle)="handleClick($event,2)" title="Unicórnio" img_src=".\assets\3_Personagens\2_Unicornio.jpg" > </app-card>
+        <app-card (clickEventHandle)="handleClick($event,3)" title="Múmia" img_src=".\assets\3_Personagens\3_Mumia.jpg" > </app-card>
+        <app-card (clickEventHandle)="handleClick($event,4)" title="Bruxa" img_src=".\assets\3_Personagens\4_Bruxa.jpg" > </app-card>
     </div>
 
-    <button *ngIf="supports" (click)="finish()">Finalizar</button>
+    <button *ngIf="supports" class="btnChar" (click)="finish()">Gerar</button>
 </div>
