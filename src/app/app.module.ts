@@ -13,11 +13,20 @@ import { HistoryComponent } from './components/pages/history/history.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './components/pages/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { MatCardModule } from '@angular/material/card'; 
 import { GenderComponent } from './components/pages/gender/gender.component';
 import { StoryTimeService} from './components/services/story-time.service';
 import { CadastroComponent } from './components/pages/cadastro/cadastro.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'; 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,14 +42,23 @@ import { CadastroComponent } from './components/pages/cadastro/cadastro.componen
     CadastroComponent,
   ],
 
-  exports: [MatProgressSpinnerModule
+  exports: [
+    MatProgressSpinnerModule,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatCardModule,
     MatProgressSpinnerModule,
+    MatStepperModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({
        timeOut: 3000,
