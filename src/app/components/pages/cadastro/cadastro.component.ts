@@ -19,7 +19,7 @@ export class CadastroComponent implements OnInit {
       console.log(this.myForm)
       this.myForm.reset();
 
-      this.storyTimeService.createCadastro('userName', 'email', 'password').subscribe(
+      this.storyTimeService.createCadastro('userName','lastname', 'email','genre' , 'datebirth','password').subscribe(
         dadosSucesso => {
           console.log(dadosSucesso);
           this.myForm.reset();
