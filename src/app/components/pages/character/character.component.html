@@ -8,5 +8,12 @@
         <app-card (clickEventHandle)="handleClick($event,4)" title="Bruxa" img_src=".\assets\3_Personagens\4_Bruxa.jpg" > </app-card>
     </div>
 
-    <button *ngIf="supports" class="btnChar" (click)="finish()">Gerar</button>
+    <!-- <button *ngIf="supports" class="btnChar" (click)="finish()">Gerar</button> -->
+    <div style="display: flex; justify-content:end">
+        <button class="continue" mat-fab extended *ngIf="supports" class="btnChar" (click)="finish()">
+        <div >
+            <span>Gerar</span>
+        </div>
+        </button>
+    </div>
 </div>
