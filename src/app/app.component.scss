@@ -3,8 +3,11 @@
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: #f2f3f5;
     overflow-y: auto;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, rgba(255, 0, 0, 0.264) 0%, rgba(0, 0, 255, 0.423) 25%, rgba(255, 255, 0, 0.401) 51%, #ffa9c96b 100%);    
+    transition: all ease;
+    animation: AnimateBG 20s ease infinite;
 
     .body {
         display: block;
@@ -18,11 +21,65 @@
         background-color: #f2f3f5;
     }
 }
-.setpContainer{
+
+@keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+.hove {
+    z-index: 200;
+    position: absolute;
+    width: 100%;
+}
+
+.setpContainer {
     margin: 0px auto;
     margin-top: 1rem;
 }
 
+.loadingText {
+    font-family: roboto;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 600;
+    animation: color-change 3s infinite;
+    transition: all ease;
+}
+
+@keyframes color-change {
+    0% {
+        color: red;
+        scale: 1;
+    }
+
+    50% {
+        color: blue;
+        scale: 1.5;
+    }
+
+    100% {
+        color: green;
+        scale: 1;
+    }
+}
+
 .body {
-    height: 100%;
+    margin: auto 0px;
+
+    * {
+        height: 100%;
+    }
 }

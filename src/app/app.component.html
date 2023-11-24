@@ -1,19 +1,33 @@
-<div class="container">
-  <app-header *ngIf="step !=0 " (backStep)="backStep()"  (setStep)="setStep($event)"> </app-header>
+<div *ngIf="!loading" class="container">
+  <div class="hove">
+    <app-header *ngIf=" 0 < step" (backStep)="backStep()" [step]="step" (setStep)="setStep($event)"> </app-header>
     <div class="setpContainer">
-      <app-stepper [step]="step"></app-stepper>
+      <app-stepper style="
+       width: 100%;
+      display: flex;
+      margin: auto;" *ngIf="step != 6" [step]="step"></app-stepper>
     </div>
+  </div>
+
 
   <div class="body">
     <app-login *ngIf="step==0" (login)="nextStep()"> </app-login>
     <app-genre (clickEventHandle)="selectGenre($event)" *ngIf="step==1"> </app-genre>
     <app-background (clickEventHandle)="selectBackground($event)" *ngIf="step==2"> </app-background>
-    <app-gender (clickEventHandle)="selectGender($event)"  *ngIf="step==3"> </app-gender>
-    <app-character  (clickEventHandle)="selectCharacter($event)" [support]="false" *ngIf="step==4"> </app-character>
-    <app-character  (clickEventHandle)="selectSuports($event)" [support]="true" *ngIf="step==5"> </app-character>
-    <app-history [name]="name" *ngIf="step == 6" > </app-history>
+    <app-gender (clickEventHandle)="selectGender($event)" *ngIf="step==3"> </app-gender>
+    <app-character (clickEventHandle)="selectCharacter($event)" [support]="false" *ngIf="step==4"> </app-character>
+    <app-character (clickEventHandle)="selectSuports($event)" [support]="true" *ngIf="step==5"> </app-character>
+    <app-history [story]="story" *ngIf="step == 6"> </app-history>
     <!-- <app-cadastro *ngIf="step==0" (cadastro)="nextStep()"></app-cadastro> -->
   </div>
 
   <app-footer></app-footer>
+</div>
+
+<div *ngIf="loading" class="container">
+  <div style="margin: auto;">
+    <p class="loadingText">CARREGANDO</p>
+    <img src="https://www.imagensanimadas.com/data/media/53/livro-imagem-animada-0012.gif" alt="">
+  </div>
+
 </div>

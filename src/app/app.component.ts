@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StoryTimeService } from './components/services/story-time.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,6 +19,13 @@ export class AppComponent {
   background: string = ''
   hero: string = ''
   supports = []
+  story: any;
+  loading: boolean;
+
+  constructor(
+     private storyTimeService: StoryTimeService,
+     private toastService: ToastrService
+     ){ }
 
   getState() {
     // console.log(this.name, this.genre, this.gender, this.background, this.hero, this.supports)
@@ -58,30 +67,31 @@ export class AppComponent {
   }
 
   selectSuports(e: any) {
-
     this.supports = e
-    this.step = this.step + 1
     this.createPrompt()
   }
 
   createPrompt() {
+    this.loading = true
     this.prompt = 'Crie uma história de ' + this.genre + ' infantil de um personagem ' + this.name + ' de genero ' + this.gender + ', sendo este(a) um(a) ' + this.hero + ' que se passa na localidade ' + this.background + ' e com os personagem auxiliar: ' + this.supports + '. Com titulo e 3 paragrafos pequenos'
-    console.log(this.prompt)
-    this.speak()
+    this.storyTimeService.createStory(this.prompt).subscribe((res)=>{
+      this.story = res
+      this.speak()
+      this.loading = false
+      this.nextStep()
+    },err=>{
+      this.toastService.error('Algo deu errado!')
+      this.toastService.error('Tente novamente')
+      this.step = 1
+      this.loading = false
+    })
   }
 
   speak() {
     var msg = new SpeechSynthesisUtterance()
-    msg.text = this.prompt
+    msg.text = this.story.titulo + this.story.paragrafo1 + this.story.paragrafo2 +this.story.paragrafo3
+    console.log(msg.text)
     window.speechSynthesis.speak(msg)
-    // console.log('rodei')
-    // let text = this.prompt
-    // // Create a new SpeechSynthesisUtterance object
-    // let utterance = new SpeechSynthesisUtterance();
-    // // Set the text and voice of the utterance
-    // utterance.text = text;
-    // utterance.voice = window.speechSynthesis.getVoices()[0];
-    // // Speak the utterance
-    // window.speechSynthesis.speak(utterance);
+
   }
 }
