@@ -1,16 +1,16 @@
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1em;
-    border-bottom: 1px solid #777;
+    // padding: 1em;
     // background-image: url("/assets/fundo-azul.png");
-    background-image: url("/assets/background1.png");
-
+    background-image: url("/assets/logo.png");
     background-size: contain;
     background-position: center;
-    background-size: 1370px 118px;
+    margin: 25px;
     background-repeat: no-repeat;
+    background-size: auto;
+    padding: 50px;
 }
 
 .history,
