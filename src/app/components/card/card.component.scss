@@ -28,17 +28,14 @@
         width: 90%;
         transition: translate(-50%, -50%);
         text-align: center;
-        background-color: rgba(0, 0, 0, 0.8);
+        background: radial-gradient(3363.44% 415.98% at -16.2% -165.83%, rgba(159, 184, 244, 0.70) 0%, rgba(159, 184, 244, 0.00) 100%);
         padding: flex auto;
         border-radius: 100px;
     }
 }
 
 .card-body:hover{
-    box-shadow: 10px 15px 50px #000000;
-    box-shadow: -5px 4px 123px 19px #000000;
-    -webkit-box-shadow: -5px 4px 123px 19px #000000;
-    -moz-box-shadow: -5px 4px 123px 19px #000000;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 @media (max-width: 1200px) {

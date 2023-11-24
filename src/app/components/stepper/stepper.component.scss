@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    
+}
+.circle{
+    border-radius: 50px;
+    background-color: #3469FF;
+    width: 1.7rem;
+    height: 1.7rem;
+    display: flex;
+    p{
+        margin: auto;
+        color: white
+    };
+}
+
+
+
+.done{
+    background-color: #4B0082;
+}
+
+.dash{
+    border-top: solid 5px;
+    color: #3469FF;
+    margin: 11px 10px;
+    height: 0rem;
+    width: 5rem;
+}

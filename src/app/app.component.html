@@ -1,38 +1,10 @@
 <div class="container">
   <app-header *ngIf="step !=0 " (setStep)="setStep($event)"></app-header>
-
-  <mat-horizontal-stepper class="steper" linear #stepper>
-    <mat-step>
-      <ng-template matStepLabel>Passo 1</ng-template>
-      <div *matStepperContent>
-        <app-genre></app-genre>
-      </div>
-    </mat-step>
-    <mat-step >
-      <ng-template matStepLabel>Passo 2</ng-template>
-      <div *matStepperContent>
-        <app-background></app-background>
-      </div>
-    </mat-step>
-    <mat-step >
-      <ng-template matStepLabel>Passo 3</ng-template>
-      <div *matStepperContent>
-        <app-gender></app-gender>
-      </div>
-    </mat-step>
-    <mat-step >
-      <ng-template matStepLabel>Passo 4</ng-template>
-      <div *matStepperContent>
-        <app-character></app-character>
-      </div>
-    </mat-step>
-    <mat-step >
-      <ng-template matStepLabel>Passo 5</ng-template>
-      <div *matStepperContent>
-        <app-history></app-history>
-      </div>
-    </mat-step>
-  </mat-horizontal-stepper>
+  
+  
+    <div class="setpContainer">
+      <app-stepper [step]="step"></app-stepper>
+    </div>
 
   <div class="body">
     <app-login *ngIf="step==0" (login)="nextStep()"> </app-login>
