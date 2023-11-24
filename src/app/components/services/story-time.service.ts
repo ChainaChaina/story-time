@@ -9,23 +9,21 @@ export class StoryTimeService {
 
   constructor(private http: HttpClient) { }
 
-  // Story
-  // POST Salvar História
-  
 
-  // GET Lista Historia por ID
+  // createStory(data:any ): Observable<any> {
+  //   const url = `${this.baseUrl}/story/gender`;
+  //   const body = JSON.stringify(data)
 
-  // Operação de criação (POST)
-  createStory(data:any ): Observable<any> {
-    const url = `${this.baseUrl}/story/gender`;
-    const body = JSON.stringify(data)
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json'
+  //   });
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
+  //   return this.http.post<StoryTimeService>(url, body, { headers })
 
-    return this.http.post<StoryTimeService>(url, body, { headers })
+  // }
 
+  createStory(prompt){
+    return this.http.post('http://50.17.41.22:8080/story/gender', {message: prompt})
   }
 
   // DELETE Deletar História

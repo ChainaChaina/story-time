@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Event } from '@angular/router';
 
 @Component({
@@ -9,6 +9,7 @@ import { Event } from '@angular/router';
 export class HeaderComponent {
   @Output() setStep = new EventEmitter()
   @Output() backStep = new EventEmitter()
+  @Input() step
   username
 
   handleClick() {

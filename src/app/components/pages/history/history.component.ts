@@ -9,13 +9,13 @@ import { StoryTimeService } from '../../services/story-time.service';
 export class HistoryComponent implements OnInit {
 
   loading = true;
-  @Input() name!: string;
+  @Input() story: any;
   chapter: number = 1
 
   storyTimeService: StoryTimeService;
 
   constructor() {
-    this.storyTimeService.createStory(this.chapter);
+   
   }
 
   ngOnInit(): void {
@@ -23,10 +23,10 @@ export class HistoryComponent implements OnInit {
     setTimeout(() => {
       this.loading = false; // Quando o carregamento estiver completo
     }, 3000); // Simula um carregamento de 3 segundos
+    console.log(this.story)
   }
 
   nextChapter(){
     this.chapter = this.chapter + 1;
-
   }
 }

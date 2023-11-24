@@ -1,5 +1,8 @@
 <nav>
-    <div (click)="handleBack()" class="arrowContainer">
+    <div *ngIf="step != 1 && step != 6 " (click)="handleBack()" class="arrowContainer">
+        <img src=".\assets\backArrow.svg" class="arrow" alt="">
+    </div>
+    <div *ngIf="step == 1 || step == 6 " style="opacity: 0;" class="arrowContainer">
         <img src=".\assets\backArrow.svg" class="arrow" alt="">
     </div>
     <img (click)="handleSetStep(1)" class="logo" src=".\assets\logo.svg" alt="">
