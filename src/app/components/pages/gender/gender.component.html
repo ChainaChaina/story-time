@@ -1,26 +1,33 @@
 <div class="container">
-    <h1>Escolha um nome bem criativo</h1>
-    <input class="btn1" [(ngModel)]="name" type="text">
-
-    <div  class="center-div">
-    <h1>Escolha o gênero do seu personagem</h1>
-
-    <button mat-fab extended class="button-span">
-        <div  (clickEventHandle)="handleClick($event)" >
-            <img class="img1" src=".\assets\4_Genero-Personagem\masculino.png" >
-            <span class="btnn">Masculino</span>
+    <div class="container-two">
+        <div class="row">
+            <h1>Escolha um nome bem criativo</h1>
+            <input class="btn1" [(ngModel)]="name" type="text">
         </div>
-    </button>
-
-    <button mat-fab extended class="button-span1">
-        <div  (clickEventHandle)="handleClick($event)" >
-            <img class="img2" src=".\assets\4_Genero-Personagem\feminino.png" >
-            <span class="btnn1">Feminino</span>
+        <div class="row">
+            <h1 style="padding: 10px;">Escolha o gênero do seu personagem</h1>
+            <div class="box">
+                <button mat-fab extended class="button-span">
+                    <div class="item-btn" (clickEventHandle)="handleClick($event)" >
+                        <img class="img1" src=".\assets\4_Genero-Personagem\masculino.png" >
+                        <span class="btnn">Masculino</span>
+                    </div>
+                </button>
+                <button mat-fab extended class="button-span1">
+                    <div class="item-btn" (clickEventHandle)="handleClick($event)" >
+                        <img class="img2" src=".\assets\4_Genero-Personagem\feminino.png" >
+                        <span class="btnn1">Feminino</span>
+                    </div>
+                </button>
+            </div>
         </div>
-    </button>
-    <button mat-fab extended class="continue">
-    <div (click)="handleClick($event)" >
-        <span class="continue">Continuar</span>
+        <div style="display: flex; justify-content:end">
+            <button class="continue" mat-fab extended>
+            <div (click)="handleClick($event)" >
+                <span>Continuar</span>
+            </div>
+            </button>
+        </div>
     </div>
-  </button>
+    
 </div>
