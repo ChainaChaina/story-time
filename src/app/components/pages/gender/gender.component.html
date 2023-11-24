@@ -6,18 +6,23 @@
         <h1>Escolha o gênero do seu personagem</h1>
     </div>
     <div class="button-div">
-        <button [ngClass]="{'active':gender == 'Masculino'}"  (click)="selectGender('Masculino')" class="button-span">
+        <button [ngClass]="{'active':gender == 'Masculino'}" (click)="selectGender('Masculino')" class="button-span">
             <img class="img1" src=".\assets\4_Genero-Personagem\masculino.png">
             <span class="btnn">Masculino</span>
         </button>
 
-        <button  [ngClass]="{'active':gender == 'Femenino'}"  (click)="selectGender('Femenino')" class="button-span1">
+        <button [ngClass]="{'active':gender == 'Femenino'}" (click)="selectGender('Femenino')" class="button-span1">
             <img class="img2" src=".\assets\4_Genero-Personagem\feminino.png">
             <span class="btnn1">Feminino</span>
         </button>
     </div>
 
-    <button [ngClass]="{'disable':!gender}" (click)="handleClick($event)" class="continue">
+    <button
+        style="
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;"
+        [ngClass]="{'disable':!gender}" (click)="handleClick($event)" class="continue">
         <p>Continuar</p>
     </button>
 </div>
