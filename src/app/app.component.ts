@@ -35,8 +35,8 @@ export class AppComponent {
   }
 
   selectGender(e: any) {
-    this.gender = e.event
-    this.name = e.name.name
+    this.gender = e.gender
+    this.name = e.name
     this.step = this.step + 1
   }
 
@@ -59,17 +59,13 @@ export class AppComponent {
 
   selectSuports(e: any) {
 
-    for (let i = 0; i < e.length + 1; i++) {
-      if (e[i]) {
-        this.supports.push(e[i].role)
-      }
-    }
+    this.supports = e
     this.step = this.step + 1
     this.createPrompt()
   }
 
   createPrompt() {
-    this.prompt = 'Crie uma história de ' + this.genre + ' infantil de um personagem ' + this.name + ' de genero ' + this.gender + ', sendo este(a) um(a) ' + this.hero + ' que se passa na localidade ' + this.background + ' e com os personagens: ' + this.supports + '. Com titulo e 3 paragrafos pequenos'
+    this.prompt = 'Crie uma história de ' + this.genre + ' infantil de um personagem ' + this.name + ' de genero ' + this.gender + ', sendo este(a) um(a) ' + this.hero + ' que se passa na localidade ' + this.background + ' e com os personagem auxiliar: ' + this.supports + '. Com titulo e 3 paragrafos pequenos'
     console.log(this.prompt)
     this.speak()
   }

@@ -65,6 +65,7 @@ import { StepperModule } from './components/stepper/stepper.module';
     ToastrModule.forRoot({
        timeOut: 3000,
       positionClass: 'toast-top-center',
+      closeButton: false,
       preventDuplicates: true,
       progressBar: true
     }),

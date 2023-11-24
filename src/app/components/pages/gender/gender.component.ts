@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-gender',
@@ -8,12 +9,26 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class GenderComponent {
 
   @Output() clickEventHandle = new EventEmitter();
-  name: string = '' 
+  name: string = ''
+  gender = null
+
+  constructor(
+    private toastService: ToastrService
+  ){}
+
+  selectGender(gender){
+    this.gender = gender
+  }
 
   handleClick(e:any){
-    this.clickEventHandle.emit({
-      event: e,
-      name: this
-    })
+    if(this.gender){
+      this.clickEventHandle.emit({
+        gender: this.gender,
+        name: this.name
+      })
+    }else{
+      this.toastService.error('Você precisa escolher um gênero')
+    }
   }
+
 }

@@ -2,25 +2,22 @@
     <h1>Escolha um nome bem criativo</h1>
     <input class="btn1" [(ngModel)]="name" type="text">
 
-    <div  class="center-div">
-    <h1>Escolha o gênero do seu personagem</h1>
-
-    <button mat-fab extended class="button-span">
-        <div  (clickEventHandle)="handleClick($event)" >
-            <img class="img1" src=".\assets\4_Genero-Personagem\masculino.png" >
-            <span class="btnn">Masculino</span>
-        </div>
-    </button>
-
-    <button mat-fab extended class="button-span1">
-        <div  (clickEventHandle)="handleClick($event)" >
-            <img class="img2" src=".\assets\4_Genero-Personagem\feminino.png" >
-            <span class="btnn1">Feminino</span>
-        </div>
-    </button>
-    <button mat-fab extended class="continue">
-    <div (click)="handleClick($event)" >
-        <span class="continue">Continuar</span>
+    <div class="center-div">
+        <h1>Escolha o gênero do seu personagem</h1>
     </div>
-  </button>
+    <div class="button-div">
+        <button [ngClass]="{'active':gender == 'Masculino'}"  (click)="selectGender('Masculino')" class="button-span">
+            <img class="img1" src=".\assets\4_Genero-Personagem\masculino.png">
+            <span class="btnn">Masculino</span>
+        </button>
+
+        <button  [ngClass]="{'active':gender == 'Femenino'}"  (click)="selectGender('Femenino')" class="button-span1">
+            <img class="img2" src=".\assets\4_Genero-Personagem\feminino.png">
+            <span class="btnn1">Feminino</span>
+        </button>
+    </div>
+
+    <button [ngClass]="{'disable':!gender}" (click)="handleClick($event)" class="continue">
+        <p>Continuar</p>
+    </button>
 </div>

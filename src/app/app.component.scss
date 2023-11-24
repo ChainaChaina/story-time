@@ -4,7 +4,7 @@
     height: 100vh;
     width: 100vw;
     background-color: #f2f3f5;
-    left: 50%;
+    overflow-y: auto;
 
     .body {
         display: block;
@@ -16,7 +16,6 @@
         justify-content: center;
         align-items: center;
         background-color: #f2f3f5;
-
     }
 }
 .setpContainer{
@@ -25,5 +24,5 @@
 }
 
 .body {
-    display: block;
+    height: 100%;
 }

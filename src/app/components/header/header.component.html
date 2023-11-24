@@ -1,8 +1,13 @@
 <nav>
-    <a class="history" routerLink="/">
-        <h2>Minha História</h2>
-    </a>
-    <ul class="links">
-        <li><a  (click)="handleClick()">Nova História</a></li>
-    </ul>
+    <div (click)="handleBack()" class="arrowContainer">
+        <img src=".\assets\backArrow.svg" class="arrow" alt="">
+    </div>
+    <img (click)="handleSetStep(1)" class="logo" src=".\assets\logo.svg" alt="">
+
+    <div class="log">
+        <img style=" margin: auto; width: 1rem;" src=".\assets\people.svg" alt="">
+        <p>
+            Olá {{username}}
+        </p>
+    </div>
 </nav>
