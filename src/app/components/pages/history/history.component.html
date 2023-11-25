@@ -1,11 +1,22 @@
 <body>
 
-<div *ngIf="loading" class="spinner-container">
-    <mat-spinner mode="indeterminate" class="spinner-container"></mat-spinner>
-</div>
+    <div *ngIf="loading" class="spinner-container">
+        <mat-spinner mode="indeterminate" class="spinner-container"></mat-spinner>
+    </div>
 
-<div *ngIf="!loading">
+    <div *ngIf="!loading">
+        <p class="animated fadeIn" *ngIf="!timer" style="font-size: 4rem ;">
+            :)
+        </p>
 
-<p>STORIA AQUI</p>
-</div>
+        <div  style="margin: 0px 5rem;">
+            <h1 style="font-size: 3.6rem;" class="animated fadeInDown" *ngIf="timer">{{story.titulo}}</h1>
+            <br> <br>
+            <p class="animated fadeInDown" style="font-size: 1.2rem;" *ngIf="timer">{{story.paragrafo1}}</p>
+            <br>
+            <p class="animated fadeInDown" style="font-size: 1.2rem;" *ngIf="timer">{{story.paragrafo2}}</p>
+            <br>
+            <p class="animated fadeInDown" style="font-size: 1.2rem;" *ngIf="timer">{{story.paragrafo3}}</p>
+        </div>
+    </div>
 </body>

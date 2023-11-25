@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 
 export class AppComponent {
 
-  step: number = 1
+  step: number = 0
   title = 'minha-historia';
   prompt: string = ''
 

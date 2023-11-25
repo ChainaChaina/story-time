@@ -13,6 +13,7 @@ export class HistoryComponent implements OnInit {
   chapter: number = 1
 
   storyTimeService: StoryTimeService;
+  timer: boolean;
 
   constructor() {
    
@@ -24,6 +25,9 @@ export class HistoryComponent implements OnInit {
       this.loading = false; // Quando o carregamento estiver completo
     }, 3000); // Simula um carregamento de 3 segundos
     console.log(this.story)
+    setTimeout(() => {
+      this.timer = true; // Quando o carregamento estiver completo
+    }, 5000); // Simula um carregamento de 3 segundos
   }
 
   nextChapter(){
