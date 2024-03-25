@@ -13,8 +13,8 @@ function staticLoadPlaces() {
             name: 'Pokèmon',
             location: {
                 // decomment the following and add coordinates:
-                // lat: <your-latitude>,
-                // lng: <your-longitude>,
+                 lat:-20.362,
+                 lng: -40.302,
             },
         },
     ];
@@ -23,9 +23,9 @@ function staticLoadPlaces() {
 var models = [
     {
         url: './assets/magnemite/scene.gltf',
-        scale: '0.5 0.5 0.5',
+        scale: '0.05 0.05 0.05',
         info: 'Magnemite, Lv. 5, HP 10/10',
-        rotation: '0 180 0',
+        rotation: '0 90 0',
     },
     {
         url: './assets/articuno/scene.gltf',
@@ -69,7 +69,7 @@ function renderPlaces(places) {
         let longitude = place.location.lng;
 
         let model = document.createElement('a-entity');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('gps-entity-place', `latitude: ${latitude - 0.1}; longitude: ${longitude - 0.1};`);
 
         setModel(models[modelIndex], model);
 
